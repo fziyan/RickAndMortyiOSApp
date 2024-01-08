@@ -8,28 +8,26 @@
 import UIKit
 
 final class RMCharacterViewController: UIViewController {
+    
+    private let charachterListView = CharachterListView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         title = "Characters"
         
-        let request = RMRequest(
-            endpoint: .character,
-            pathComponents: ["1"],
-            queryParameters: [
-             URLQueryItem(name: "name", value: "rick"),
-             URLQueryItem(name: "status", value: "alive")
-            ]
-        )
-        print(request.url)
-        
-        RMService.shared.execute(request, expecting: RMCharacter.self) { result in
-            
-        }
-
-     
+        congfigureView()
     }
     
+    private func congfigureView(){
+        view.addSubview(charachterListView)
+        NSLayoutConstraint.activate([
+            charachterListView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            charachterListView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+            charachterListView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
+            charachterListView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+        
+        ])
+    }
 
 }
