@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class CharachterListView: UIView {
+final class RMCharachterListView: UIView {
     
-    private let viewModel = CharachterListViewViewModel()
+    private let viewModel = RMCharachterListViewViewModel()
     
     private let spinner: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView(style: .large)
@@ -27,7 +27,7 @@ final class CharachterListView: UIView {
         collectionView.isHidden = true
         collectionView.alpha = 0
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(RMCharacterCollectionViewCell.self, forCellWithReuseIdentifier: RMCharacterCollectionViewCell.cellIdentifier)
         
         return collectionView
     }()
@@ -66,6 +66,7 @@ final class CharachterListView: UIView {
         collectionView.dataSource = viewModel
         collectionView.delegate = viewModel
         
+        // CollectionView itemları yüklendikten sonra ekranda görünen spinner hidden oluyor.
         DispatchQueue.main.asyncAfter(deadline: .now()+3, execute: {
             self.spinner.stopAnimating()
             
