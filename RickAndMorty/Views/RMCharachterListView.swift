@@ -7,7 +7,15 @@
 
 import UIKit
 
+protocol RMCharachterListViewDelegate: AnyObject {
+    func rmCharacterListView(
+                            _ characterListView: RMCharachterListView,
+                            didSelectCharacter character: RMCharacter)
+}
+
 final class RMCharachterListView: UIView {
+    
+    public weak var delegate: RMCharachterListViewDelegate?
     
     private let viewModel = RMCharachterListViewViewModel()
     
@@ -22,12 +30,16 @@ final class RMCharachterListView: UIView {
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.isHidden = true
         collectionView.alpha = 0
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(RMCharacterCollectionViewCell.self, forCellWithReuseIdentifier: RMCharacterCollectionViewCell.cellIdentifier)
+        collectionView.register(RMCharacterCollectionViewCell.self,
+                                forCellWithReuseIdentifier: RMCharacterCollectionViewCell.cellIdentifier)
+        collectionView.register(RMFooterCollectionReusableView.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+                                withReuseIdentifier: RMFooterCollectionReusableView.identifier)
         
         return collectionView
     }()
@@ -71,6 +83,12 @@ final class RMCharachterListView: UIView {
 }
 
 extension RMCharachterListView: RMCharacterListViewViewModelDelegate {
+    func didSelectCharacter(_ character: RMCharacter) {
+        delegate?.rmCharacterListView(self, didSelectCharacter: character)
+    }
+    
+
+    
     func didLoadInitialCharacters(){
         // CollectionView itemları yüklendikten sonra ekranda görünen spinner hidden oluyor.
         DispatchQueue.main.asyncAfter(deadline: .now()+3, execute: {
