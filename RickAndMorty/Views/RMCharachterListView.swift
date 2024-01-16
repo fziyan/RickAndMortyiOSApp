@@ -38,8 +38,8 @@ final class RMCharachterListView: UIView {
         addSubviews(collectionView, spinner)
         
         addConstraints()
-        
         spinner.startAnimating()
+        viewModel.delegate = self
         viewModel.fetchCharachters()
         configureCollectionView()
     }
@@ -66,16 +66,21 @@ final class RMCharachterListView: UIView {
         collectionView.dataSource = viewModel
         collectionView.delegate = viewModel
         
+    }
+    
+}
+
+extension RMCharachterListView: RMCharacterListViewViewModelDelegate {
+    func didLoadInitialCharacters(){
         // CollectionView itemları yüklendikten sonra ekranda görünen spinner hidden oluyor.
         DispatchQueue.main.asyncAfter(deadline: .now()+3, execute: {
             self.spinner.stopAnimating()
-            
             self.collectionView.isHidden = false
+            self.collectionView.reloadData()  // initial fetch
             
             UIView.animate(withDuration: 0.4){
                 self.collectionView.alpha = 1
             }
         })
     }
-    
 }
