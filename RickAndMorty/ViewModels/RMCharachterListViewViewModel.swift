@@ -27,7 +27,9 @@ final class RMCharachterListViewViewModel: NSObject {
                     characterStatus: character.status,
                     characterImageUrl: URL(string: character.image)
                 )
-                cellViewModels.append(viewModel)
+                if !cellViewModels.contains(viewModel){
+                    cellViewModels.append(viewModel)
+                }
             }
         }
     }
@@ -84,20 +86,22 @@ final class RMCharachterListViewViewModel: NSObject {
                     let originalCount = strongSelf.characters.count
                     let newCount = moreResults.count
                     let total = originalCount+newCount
-                    let startingIndex = total - newCount - 1
+                    let startingIndex = total - newCount
                     let indexPathsToAdd: [IndexPath] = Array(startingIndex..<(startingIndex+newCount)).compactMap({
                         return IndexPath(row: $0, section: 0)
                     })
-                    print(indexPathsToAdd)
                     strongSelf.characters.append(contentsOf: moreResults)
+                        
                     DispatchQueue.main.async {
                         strongSelf.delegate?.didLoadMoreCharacters(
                             with: indexPathsToAdd)
+                       
                         strongSelf.isLoadingMoreCharacters = false
                     }
                    
                 case .failure(let failure):
                     print(String(describing: failure))
+                    self?.isLoadingMoreCharacters = false
                 }
                 
             }
