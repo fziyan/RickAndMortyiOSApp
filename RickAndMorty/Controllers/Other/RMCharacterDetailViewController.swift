@@ -22,6 +22,7 @@ final class RMCharacterDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = viewModel.title
+        view.backgroundColor = .systemBackground
     }
 
 }
