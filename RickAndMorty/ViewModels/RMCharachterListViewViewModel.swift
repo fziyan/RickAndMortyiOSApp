@@ -38,7 +38,7 @@ final class RMCharachterListViewViewModel: NSObject {
     
     private var apiInfo: RMGetAllCharactersResponse.Info? = nil
     
-    /// Fetch initial set of characters '20'
+    /// Karakterlerin çekildiği fonksyion. Servisten 20 20 çekiliyor.
     public func fetchCharachters(){
         RMService.shared.execute(
             .listCharactersRequest,
@@ -56,14 +56,13 @@ final class RMCharachterListViewViewModel: NSObject {
             
         }
     }
-    /// Paginate if additional characters are needed
+    /// Pagination düzenlemeri burada kontrol ediliyor. Ekranda aşağı kaydırıldıkça yeni karakterler yükleniyor.
     public func fetchAdditionalCharacters(url: URL) {
         guard !isLoadingMoreCharacters else {
             return
         }
         
         isLoadingMoreCharacters = true
-        print("Fetching more characters")
         guard let request = RMRequest(url: url) else {
             isLoadingMoreCharacters = false
             print("Failed to create request")

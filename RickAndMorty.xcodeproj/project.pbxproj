@@ -37,6 +37,7 @@
 		7E83FF2B2B567EFF00AD2CE2 /* RMCharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E83FF2A2B567EFF00AD2CE2 /* RMCharacterDetailView.swift */; };
 		7E83FF2D2B567F3400AD2CE2 /* RMCharacterDetailViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E83FF2C2B567F3400AD2CE2 /* RMCharacterDetailViewViewModel.swift */; };
 		7E83FF2F2B56AB5700AD2CE2 /* RMFooterCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E83FF2E2B56AB5700AD2CE2 /* RMFooterCollectionReusableView.swift */; };
+		7E83FF312B5FE18900AD2CE2 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E83FF302B5FE18900AD2CE2 /* ImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		7E83FF2A2B567EFF00AD2CE2 /* RMCharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterDetailView.swift; sourceTree = "<group>"; };
 		7E83FF2C2B567F3400AD2CE2 /* RMCharacterDetailViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterDetailViewViewModel.swift; sourceTree = "<group>"; };
 		7E83FF2E2B56AB5700AD2CE2 /* RMFooterCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMFooterCollectionReusableView.swift; sourceTree = "<group>"; };
+		7E83FF302B5FE18900AD2CE2 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 		7E50B8B22B225D6700CDC219 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				7E83FF302B5FE18900AD2CE2 /* ImageLoader.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				7E50B8DD2B4CBC2600CDC219 /* RMCharacterCollectionViewCell.swift in Sources */,
 				7E50B89C2B225ABA00CDC219 /* SceneDelegate.swift in Sources */,
 				7E50B8C32B22601600CDC219 /* RMSettingsViewController.swift in Sources */,
+				7E83FF312B5FE18900AD2CE2 /* ImageLoader.swift in Sources */,
 				7E50B8C52B22788C00CDC219 /* RMService.swift in Sources */,
 				7E50B8B52B225E0000CDC219 /* RMLocation.swift in Sources */,
 				7E83FF2F2B56AB5700AD2CE2 /* RMFooterCollectionReusableView.swift in Sources */,
