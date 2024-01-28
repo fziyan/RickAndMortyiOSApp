@@ -23,10 +23,10 @@ final class RMCharacterViewController: UIViewController, RMCharachterListViewDel
         charachterListView.delegate = self
         view.addSubview(charachterListView)
         NSLayoutConstraint.activate([
-            charachterListView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            charachterListView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
-            charachterListView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
-            charachterListView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+           charachterListView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+           charachterListView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+           charachterListView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
+           charachterListView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
         
         ])
     }
