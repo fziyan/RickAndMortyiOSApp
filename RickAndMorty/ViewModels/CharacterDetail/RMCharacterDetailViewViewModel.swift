@@ -38,9 +38,9 @@ final class RMCharacterDetailViewViewModel {
                 .init(type: .episodeCount , value: "\(character.episode.count)" ),
             ]),
             .episodes(viewModels: character.episode.compactMap({
-                return RMCharacterEpisodeCollectionViewCellViewModel(episodeDataUrl: URL(string: $0))
+                RMCharacterEpisodeCollectionViewCellViewModel(episodeDataUrl: URL(string: $0))
             }))
-        
+            
         ]
     }
     
@@ -70,7 +70,7 @@ final class RMCharacterDetailViewViewModel {
             layoutSize: NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1.0),
                 heightDimension: .fractionalHeight(0.5)),
-                subitems: [item, item])
+            subitems: [item, item])
         
         let section = NSCollectionLayoutSection(group: group)
         
@@ -93,7 +93,7 @@ final class RMCharacterDetailViewViewModel {
             layoutSize: NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1.0),
                 heightDimension: .absolute(150)),
-                subitems: [item, item])
+            subitems: [item, item])
         
         let section = NSCollectionLayoutSection(group: group)
         
@@ -116,12 +116,12 @@ final class RMCharacterDetailViewViewModel {
             layoutSize: NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(0.8),
                 heightDimension: .absolute(150)),
-                subitems: [item])
+            subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .groupPaging
         return section
     }
     
-
+    
 }
