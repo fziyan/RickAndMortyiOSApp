@@ -33,7 +33,7 @@ final class RMCharacterEpisodeCollectionViewCellViewModel {
     }
     
     public func registerForData(_ block: @escaping (RMEpisodeDataRender) -> Void) {
-        self.dataBlock? = block
+        self.dataBlock = block
     }
     
     public func fetchEpisode(){

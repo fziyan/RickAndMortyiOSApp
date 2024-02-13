@@ -48,7 +48,20 @@ final class RMCharacterEpisodeCollectionViewCell: UICollectionViewCell {
     
     private func setUpConstraints(){
         NSLayoutConstraint.activate([
-        
+            seasonLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
+            seasonLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            seasonLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            seasonLabel.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.3),
+            
+            nameLabel.topAnchor.constraint(equalTo: seasonLabel.bottomAnchor),
+            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            nameLabel.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.3),
+            
+            airDateLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor),
+            airDateLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            airDateLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            airDateLabel.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.3)
         ])
     }
     
@@ -61,10 +74,10 @@ final class RMCharacterEpisodeCollectionViewCell: UICollectionViewCell {
     
     public func configure(with viewModel: RMCharacterEpisodeCollectionViewCellViewModel){
         viewModel.registerForData { [weak self] data in
-            
             self?.nameLabel.text = data.name
-            self?.airDateLabel.text = "Episode: "+data.air_date
-            self?.seasonLabel.text = data.episode
+            self?.seasonLabel.text = "Episode "+data.episode
+            self?.airDateLabel.text = "Aired on: "+data.air_date
+            
         }
         viewModel.fetchEpisode()
     }
