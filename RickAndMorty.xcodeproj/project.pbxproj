@@ -45,6 +45,7 @@
 		7E83FF402B67D03C00AD2CE2 /* FileRMCharacterEpisodeCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E83FF3F2B67D03C00AD2CE2 /* FileRMCharacterEpisodeCollectionViewCellViewModel.swift */; };
 		7E83FF432B67D05900AD2CE2 /* FileRMCharacterInfoCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E83FF422B67D05900AD2CE2 /* FileRMCharacterInfoCollectionViewCellViewModel.swift */; };
 		7E83FF452B7C085800AD2CE2 /* RMEpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E83FF442B7C085800AD2CE2 /* RMEpisodeDetailViewController.swift */; };
+		7E83FF472B7C0FFF00AD2CE2 /* RMAPICacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E83FF462B7C0FFF00AD2CE2 /* RMAPICacheManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		7E83FF3F2B67D03C00AD2CE2 /* FileRMCharacterEpisodeCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileRMCharacterEpisodeCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		7E83FF422B67D05900AD2CE2 /* FileRMCharacterInfoCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileRMCharacterInfoCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		7E83FF442B7C085800AD2CE2 /* RMEpisodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMEpisodeDetailViewController.swift; sourceTree = "<group>"; };
+		7E83FF462B7C0FFF00AD2CE2 /* RMAPICacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMAPICacheManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				7E83FF302B5FE18900AD2CE2 /* ImageLoader.swift */,
+				7E83FF462B7C0FFF00AD2CE2 /* RMAPICacheManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				7E50B8D72B4C83D800CDC219 /* RMCharachterListViewViewModel.swift in Sources */,
 				7E83FF392B67CFA100AD2CE2 /* RMCharacterEpisodeCollectionViewCell.swift in Sources */,
 				7E50B8BC2B225EE700CDC219 /* RMCharacterViewController.swift in Sources */,
+				7E83FF472B7C0FFF00AD2CE2 /* RMAPICacheManager.swift in Sources */,
 				7E83FF2B2B567EFF00AD2CE2 /* RMCharacterDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
