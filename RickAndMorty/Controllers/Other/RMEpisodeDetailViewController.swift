@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class RMEpisodeDetailViewController: UIViewController {
+final class RMEpisodeDetailViewController: UIViewController, RMEpisodeDetailViewViewModelDelegate {
     
     private let viewModel: RMEpisodeDetailViewViewModel
     
@@ -26,10 +26,14 @@ final class RMEpisodeDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(detailView)
+        view.backgroundColor = .systemBackground
         addConstraints()
         title = "Episode"
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(didTapShare))
+        
+        viewModel.delegate = self
+        viewModel.fetchEpisodeData()
     }
     
     private func addConstraints(){
@@ -42,13 +46,12 @@ final class RMEpisodeDetailViewController: UIViewController {
     }
     
     @objc
-    private func didTapSearch() {
+    private func didTapShare() {
         
     }
     
-    @objc
-    private func didTapShare() {
-        
+    func didFetchEpisodeDetails() {
+        detailView.configure(with: viewModel)
     }
 
 }
