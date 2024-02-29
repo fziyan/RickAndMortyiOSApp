@@ -10,11 +10,21 @@ import UIKit
 enum RMSettingsOption: CaseIterable{
     case rateApp
     case contactUs
-    case terms
-    case privacy
     case apiReference
-    case viewSeries
     case viewCode
+    
+    var targetUrl: URL? {
+        switch self {
+        case .rateApp:
+            return nil
+        case .contactUs:
+            return URL(string: "https://linkedin.com/in/fatihan-ziyan-9182ba125")
+        case .apiReference:
+            return URL(string: "https://rickandmortyapi.com/documentation/#introduction")
+        case .viewCode:
+            return URL(string: "https://github.com/fziyan/RickAndMortyiOSApp")
+        }
+    }
     
     var displayTitle: String {
         switch self {
@@ -22,14 +32,8 @@ enum RMSettingsOption: CaseIterable{
             return "Rate App"
         case .contactUs:
             return "Contact Us"
-        case .terms:
-            return "Terms of Service"
-        case .privacy:
-            return "Privace Policy"
         case .apiReference:
             return "API Reference"
-        case .viewSeries:
-            return "View Video Series"
         case .viewCode:
             return "View App Code"
         }
@@ -40,17 +44,11 @@ enum RMSettingsOption: CaseIterable{
         case .rateApp:
             return .systemBlue
         case .contactUs:
-            return .systemRed
-        case .terms:
-            return .systemGreen
-        case .privacy:
-            return .systemYellow
+            return .green
         case .apiReference:
             return .systemOrange
-        case .viewSeries:
-            return .systemPurple
         case .viewCode:
-            return .systemPink
+            return .systemPurple
         }
     }
     
@@ -60,14 +58,8 @@ enum RMSettingsOption: CaseIterable{
             return UIImage(systemName: "star.fill")
         case .contactUs:
             return UIImage(systemName: "paperplane")
-        case .terms:
-            return UIImage(systemName: "doc")
-        case .privacy:
-            return UIImage(systemName: "lock")
         case .apiReference:
             return UIImage(systemName: "list.clipboard")
-        case .viewSeries:
-            return UIImage(systemName: "tv.fill")
         case .viewCode:
             return UIImage(systemName: "hammer.fill")
         }
