@@ -95,7 +95,6 @@ final class RMEpisodeDetailViewViewModel {
         }).compactMap({
             return RMRequest(url: $0)
         })
-        
         // 10 of parallel request
         // Notified once all done
         
